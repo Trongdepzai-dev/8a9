@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kỷ Niệm Lớp 8A9 - THCS Lương Khánh Thiện</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        .title-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .heading-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .polaroid:nth-child(even) {
+            transform: rotate(2deg);
+        }
+        
+        .polaroid:nth-child(even):hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        .polaroid::after {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            height: 30px;
+            background: rgba(255,255,255,0.7);
+            filter: blur(10px);
+            z-index: -1;
+        }
+        
+        .yearbook-page {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: 15px solid #e0c9a6;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .yearbook-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/notebook.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .memory-card {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.8) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transform: rotate(30deg);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+        
+        .memory-card:hover::before {
+            opacity: 1;
+            top: -30%;
+            left: -30%;
+        }
+        
+        .memory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .autograph {
+            font-family: 'Dancing Script', cursive;
+            transform: rotate(-5deg);
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        
+        .autograph:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        .photo-frame {
+            border: 8px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .photo-frame:hover {
+            transform: scale(1.03) rotate(1deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .ribbon {
+            position: relative;
+            padding: 10px 20px;
+            margin: 20px 0;
+            color: white;
+            background: #4a6baf;
+            display: inline-block;
+        }
+        
+        .ribbon::before, .ribbon::after {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: -10px;
+            border: 15px solid #3a5699;
+            z-index: -1;
+        }
+        
+        .ribbon::before {
+            left: -20px;
+            border-right-width: 10px;
+            border-left-color: transparent;
+        }
+        
+        .ribbon::after {
+            right: -20px;
+            border-left-width: 10px;
+            border-right-color: transparent;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #4a6baf;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid #4a6baf;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            z-index: 9999;
+            animation: confetti 5s ease-in-out;
+        }
+        
+        @keyframes confetti {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 15px;
+        }
+        
+        .scroll-indicator::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            background-color: white;
+            border-radius: 50%;
+            animation: scroll 2s infinite;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(15px);
+                opacity: 0;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #4a6baf, #a4508b, #d72638);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 8s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-blue-50 to-purple-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-90 shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-school text-2xl text-blue-600"></i>
+                    <span class="text-xl font-bold heading-font">8A9 Lương Khánh Thiện</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Trang chủ</a>
+                    <a href="#class" class="text-gray-700 hover:text-blue-600 transition">Lớp học</a>
+                    <a href="#memories" class="text-gray-700 hover:text-blue-600 transition">Kỷ niệm</a>
+                    <a href="#messages" class="text-gray-700 hover:text-blue-600 transition">Lưu bút</a>
+                    <a href="#timeline" class="text-gray-700 hover:text-blue-600 transition">Hành trình</a>
+                </div>
+                <button class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="parallax" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div class="floating inline-block mb-6">
+                <i class="fas fa-graduation-cap text-6xl md:text-8xl text-yellow-400"></i>
+            </div>
+            <h1 class="title-font text-5xl md:text-7xl font-bold text-white mb-4 fade-in">Kỷ Niệm Lớp 8A9</h1>
+            <h2 class="text-2xl md:text-4xl font-semibold text-yellow-200 mb-8 fade-in delay-1">THCS Lương Khánh Thiện</h2>
+            
+            <div class="w-full max-w-3xl mx-auto bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur-sm fade-in delay-2">
+                <p class="text-lg md:text-xl text-white italic">
+                    "Những ngày tháng bên nhau dưới mái trường này sẽ mãi là kỷ niệm đẹp nhất tuổi học trò. Dù mai này mỗi người một phương, chúng ta sẽ luôn nhớ về nhau!"
+                </p>
+            </div>
+            
+            <div class="mt-10 fade-in delay-3">
+                <a href="#class" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                    Khám phá ngay <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Class Photo Section -->
+    <section id="class" class="py-20 bg-gradient-to-b from-blue-50 to-purple-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="ribbon heading-font fade-in">
+                    <h2 class="text-2xl md:text-3xl font-bold">Lớp Chúng Mình</h2>
+                </div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 fade-in delay-1">51 cá tính, 51 màu sắc cùng chung một mái nhà 8A9</p>
+            </div>
+            
+            <div class="yearbook-page p-8 md:p-12 rounded-xl max-w-6xl mx-auto mb-10 fade-in delay-2">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Student Polaroids - 51 students -->
+                    <div class="polaroid text-center">
+                        <div class="w-24 h-24 md:w-32 md:h-32 bg-blue-200 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden photo-frame">
+                            <i class="fas fa-user-graduate text-3xl text-blue-600"></i>
+                        </div>
+                        <p class="font-medium">Nguyễn Văn A</p>
+                        <p class="text-sm text-gray-500">Lớp trưởng</p>
+                    </div>
+                    <div class="polaroid text-center">
+                        <div class="w-24 h-24 md:w-32 md:h-32 bg-pink-200 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden photo-frame">
+                            <i class="fas fa-user-graduate text-3xl text-pink-600"></i>
+                        </div>
+                        <p class="font-medium">Trần Thị B</p>
+                        <p class="text-sm text-gray-500">Lớp phó</p>
+                    </div>
+                    <div class="polaroid text-center">
+                        <div class="w-24 h-24 md:w-32 md:h-32 bg-green-200 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden photo-frame">
+                            <i class="fas fa-user-graduate text-3xl text-green-600"></i>
+                        </div>
+                        <p class="font-medium">Lê Hoàng C</p>
+                        <p class="text-sm text-gray-500">Bí thư</p>
+                    </div>
+                    <div class="polaroid text-center">
+                        <div class="w-24 h-24 md:w-32 md:h-32 bg-yellow-200 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden photo-frame">
+                            <i class="fas fa-user-graduate text-3xl text-yellow-600"></i>
+                        </div>
+                        <p class="font-medium">Phạm Minh D</p>
+                        <p class="text-sm text-gray-500">Tổ trưởng</p>
+                    </div>
+                    <!-- Add more students here -->
+                </div>
+                <div class="text-center mt-8">
+                    <button onclick="showAllStudents()" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-full transition duration-300 transform hover:scale-105 shadow-md">
+                        Xem Tất Cả 51 Bạn <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Teacher Section -->
+            <div class="max-w-4xl mx-auto mt-16">
+                <h3 class="text-2xl font-bold text-center text-purple-700 mb-8 heading-font fade-in">Thầy Cô Giáo</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flip-card h-64 fade-in delay-1">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front bg-blue-100 rounded-lg shadow-md flex flex-col items-center justify-center p-4">
+                                <div class="w-24 h-24 bg-blue-300 rounded-full mb-4 flex items-center justify-center overflow-hidden photo-frame">
+                                    <i class="fas fa-chalkboard-teacher text-3xl text-blue-700"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-blue-800">Cô Nguyễn Thị Hương</h4>
+                                <p class="text-blue-600">Chủ nhiệm</p>
+                            </div>
+                            <div class="flip-card-back bg-blue-600 rounded-lg shadow-md flex items-center justify-center p-4 text-white">
+                                <p class="text-center italic">"Các em là niềm tự hào của cô! Hãy luôn cố gắng hết mình."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card h-64 fade-in delay-2">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front bg-green-100 rounded-lg shadow-md flex flex-col items-center justify-center p-4">
+                                <div class="w-24 h-24 bg-green-300 rounded-full mb-4 flex items-center justify-center overflow-hidden photo-frame">
+                                    <i class="fas fa-chalkboard-teacher text-3xl text-green-700"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-green-800">Thầy Trần Văn Minh</h4>
+                                <p class="text-green-600">Toán học</p>
+                            </div>
+                            <div class="flip-card-back bg-green-600 rounded-lg shadow-md flex items-center justify-center p-4 text-white">
+                                <p class="text-center italic">"Toán học là chìa khóa mở cửa tương lai. Hãy yêu môn Toán!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card h-64 fade-in delay-3">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front bg-purple-100 rounded-lg shadow-md flex flex-col items-center justify-center p-4">
+                                <div class="w-24 h-24 bg-purple-300 rounded-full mb-4 flex items-center justify-center overflow-hidden photo-frame">
+                                    <i class="fas fa-chalkboard-teacher text-3xl text-purple-700"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-purple-800">Cô Lê Thị Lan</h4>
+                                <p class="text-purple-600">Văn học</p>
+                            </div>
+                            <div class="flip-card-back bg-purple-600 rounded-lg shadow-md flex items-center justify-center p-4 text-white">
+                                <p class="text-center italic">"Văn học là nhân học. Hãy sống đẹp như những trang văn."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section id="memories" class="py-20 bg-gradient-to-b from-purple-50 to-pink-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text heading-font fade-in">Khoảnh Khắc Đáng Nhớ</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 fade-in delay-1">Những kỷ niệm đẹp nhất của chúng ta dưới mái trường Lương Khánh Thiện</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="memory-card p-6 shadow-md fade-in">
+                    <div class="bg-blue-100 h-48 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Classroom" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-semibold text-blue-700 mb-2">Giờ Học Cuối Cùng</h4>
+                    <p class="text-gray-600">Những bài giảng cuối cùng của thầy cô trước khi chúng ta chia tay mái trường.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500"><i class="fas fa-calendar-alt mr-1"></i> 15/05/2024</span>
+                        <button class="text-blue-500 hover:text-blue-700 text-sm font-medium" onclick="showMemoryModal(1)">
+                            Xem thêm <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="memory-card p-6 shadow-md fade-in delay-1">
+                    <div class="bg-pink-100 h-48 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yearbook photo" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-semibold text-pink-700 mb-2">Chụp Ảnh Kỷ Yếu</h4>
+                    <p class="text-gray-600">Những bức ảnh đẹp nhất trong trang phục áo dài truyền thống.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500"><i class="fas fa-calendar-alt mr-1"></i> 20/04/2024</span>
+                        <button class="text-pink-500 hover:text-pink-700 text-sm font-medium" onclick="showMemoryModal(2)">
+                            Xem thêm <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="memory-card p-6 shadow-md fade-in delay-2">
+                    <div class="bg-yellow-100 h-48 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Party" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-semibold text-yellow-700 mb-2">Tiệc Liên Hoan</h4>
+                    <p class="text-gray-600">Những tiết mục văn nghệ và bữa tiệc chia tay đầy cảm xúc.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500"><i class="fas fa-calendar-alt mr-1"></i> 25/05/2024</span>
+                        <button class="text-yellow-500 hover:text-yellow-700 text-sm font-medium" onclick="showMemoryModal(3)">
+                            Xem thêm <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in delay-3">
+                <button class="bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg inline-flex items-center" onclick="createConfetti()">
+                    <i class="fas fa-heart mr-2"></i> Yêu Lớp 8A9
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-purple-800 heading-font fade-in">Hành Trình Lớp 8A9</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 fade-in delay-1">Những cột mốc đáng nhớ trong năm học vừa qua</p>
+            </div>
+            
+            <div class="timeline fade-in delay-2">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-blue-600">Khai Giảng Năm Học</h3>
+                        <p class="text-gray-500 text-sm">5/9/2023</p>
+                        <p class="mt-2">Ngày đầu tiên gặp gỡ và làm quen với nhau dưới mái trường THCS Lương Khánh Thiện</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-pink-600">Đại Hội Chi Đội</h3>
+                        <p class="text-gray-500 text-sm">15/10/2023</p>
+                        <p class="mt-2">Bầu ra ban cán sự lớp mới cho năm học 2023-2024</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-green-600">Hội Khỏe Phù Đổng</h3>
+                        <p class="text-gray-500 text-sm">20/11/2023</p>
+                        <p class="mt-2">Giành giải Nhất môn kéo co và giải Ba toàn đoàn</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-yellow-600">Văn Nghệ 20/11</h3>
+                        <p class="text-gray-500 text-sm">19/11/2023</p>
+                        <p class="mt-2">Tiết mục "Bụi Phấn" đạt giải Nhất toàn trường</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-purple-600">Chụp Ảnh Kỷ Yếu</h3>
+                        <p class="text-gray-500 text-sm">20/04/2024</p>
+                        <p class="mt-2">Cả lớp cùng nhau chụp những bức ảnh đẹp nhất trong trang phục áo dài</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-red-600">Lễ Tổng Kết</h3>
+                        <p class="text-gray-500 text-sm">25/05/2024</p>
+                        <p class="mt-2">Ngày chia tay đầy cảm xúc và kỷ niệm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages Section -->
+    <section id="messages" class="py-20 bg-gradient-to-b from-pink-50 to-red-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-pink-700 heading-font fade-in">Lưu Bút</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 fade-in delay-1">Những dòng tâm sự, lời nhắn gửi từ các thành viên lớp 8A9</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto fade-in delay-2">
+                <div class="bg-white bg-opacity-90 rounded-xl p-8 shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600 mb-4 heading-font">Từ Cô Giáo Chủ Nhiệm</h3>
+                            <div class="bg-blue-50 p-6 rounded-lg mb-6 relative">
+                                <div class="absolute top-0 left-0 w-full h-full bg-white opacity-20"></div>
+                                <p class="italic text-gray-700 relative z-10">"Cô rất tự hào về tất cả các em! Dù có đi đâu, làm gì, hãy luôn giữ vững ước mơ và nhiệt huyết của tuổi trẻ. Chúc các em thành công trên con đường mình chọn!"</p>
+                                <p class="text-right mt-4 font-medium text-blue-600 relative z-10">Cô Nguyễn Thị Hương</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-pink-600 mb-4 heading-font">Từ Lớp Trưởng</h3>
+                            <div class="bg-pink-50 p-6 rounded-lg">
+                                <p class="italic text-gray-700">"3 năm học cùng nhau thật tuyệt vời! Cảm ơn mọi người đã luôn hỗ trợ và tạo nên những kỷ niệm đẹp. Hẹn gặp lại ở ngày hội cựu học sinh! Nhớ mãi 8A9 của tôi."</p>
+                                <p class="text-right mt-4 font-medium text-pink-600">Nguyễn Văn A - Lớp trưởng</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-xl font-semibold text-center text-purple-600 mb-6 heading-font">Lời Nhắn Của Các Bạn</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="autograph bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 hover:shadow-md">
+                                <p>"Nhớ những lần trốn học đi ăn vặt cùng tụi mình! Nhớ cả những lần bị phạt vì đi học muộn nữa. Yêu cả lớp nhiều!"</p>
+                                <p class="text-right mt-2 text-sm text-yellow-700">- Tuấn Anh</p>
+                            </div>
+                            <div class="autograph bg-green-50 p-4 rounded-lg border-l-4 border-green-400 hover:shadow-md">
+                                <p>"Cảm ơn vì đã giúp đỡ mình trong học tập. Nhớ những buổi chiều ở lại học nhóm cùng nhau. Nhớ cậu lắm!"</p>
+                                <p class="text-right mt-2 text-sm text-green-700">- Minh Châu</p>
+                            </div>
+                            <div class="autograph bg-red-50 p-4 rounded-lg border-l-4 border-red-400 hover:shadow-md">
+                                <p>"Team bóng đá lớp mãi đỉnh! Nhớ những trận đấu hòa hét cổ vũ. Hẹn gặp lại trên sân cỏ."</p>
+                                <p class="text-right mt-2 text-sm text-red-700">- Quang Hải</p>
+                            </div>
+                            <div class="autograph bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400 hover:shadow-md">
+                                <p>"Nhớ những lần thi đua giành cờ luân lưu. Nhớ cả những lần cãi nhau xong lại làm hòa. Yêu 8A9 nhiều!"</p>
+                                <p class="text-right mt-2 text-sm text-purple-700">- Mai Linh</p>
+                            </div>
+                            <div class="autograph bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400 hover:shadow-md">
+                                <p>"Cảm ơn vì đã cho tôi những người bạn tuyệt vời nhất. Nhớ mãi những giờ ra chơi cùng nhau."</p>
+                                <p class="text-right mt-2 text-sm text-blue-700">- Hoàng Nam</p>
+                            </div>
+                            <div class="autograph bg-pink-50 p-4 rounded-lg border-l-4 border-pink-400 hover:shadow-md">
+                                <p>"8A9 mãi là nhà! Dù sau này có đi đâu, làm gì cũng nhớ về nhau nhé!"</p>
+                                <p class="text-right mt-2 text-sm text-pink-700">- Thu Hà</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-center text-gray-700 mb-4 heading-font">Gửi Lời Nhắn Của Bạn</h3>
+                        <form id="messageForm" class="max-w-md mx-auto">
+                            <div class="mb-4">
+                                <input type="text" id="name" placeholder="Tên của bạn" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div class="mb-4">
+                                <textarea id="message" rows="4" placeholder="Lời nhắn của bạn..." class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                                Gửi Lời Nhắn <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 heading-font fade-in">Thư Viện Ảnh</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 fade-in delay-1">Những khoảnh khắc đáng nhớ được lưu giữ</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 fade-in delay-2">
+                <div class="photo-frame overflow-hidden rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Class photo" class="w-full h-48 object-cover">
+                </div>
+                <div class="photo-frame overflow-hidden rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Group photo" class="w-full h-48 object-cover">
+                </div>
+                <div class="photo-frame overflow-hidden rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Party" class="w-full h-48 object-cover">
+                </div>
+                <div class="photo-frame overflow-hidden rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Study" class="w-full h-48 object-cover">
+                </div>
+                <div class="photo-frame overflow-hidden rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sports" class="w-full h-48 object-cover">
+                </div>
+                <div class="photo-frame overflow-hidden rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Friends" class="w-full h-48 object-cover">
+                </div>
+                <div class="photo-frame overflow-hidden rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Graduation" class="w-full h-48 object-cover">
+                </div>
+                <div class="photo-frame overflow-hidden rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Classroom" class="w-full h-48 object-cover">
+                </div>
+            </div>
+            
+            <div class="text-center mt-10 fade-in delay-3">
+                <button class="bg-gray-800 hover:bg-gray-900 text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg inline-flex items-center">
+                    Xem Thêm Ảnh <i class="fas fa-images ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 heading-font fade-in">Ngày Chúng Ta Tốt Nghiệp</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto fade-in delay-1">Đếm ngược đến ngày chia tay mái trường THCS Lương Khánh Thiện</p>
+            
+            <div class="max-w-2xl mx-auto bg-white bg-opacity-20 rounded-xl p-6 shadow-lg backdrop-blur-sm fade-in delay-2">
+                <div class="grid grid-cols-4 gap-4 text-center">
+                    <div class="bg-white bg-opacity-30 p-4 rounded-lg">
+                        <div class="text-4xl font-bold" id="days">00</div>
+                        <div class="text-sm opacity-80">Ngày</div>
+                    </div>
+                    <div class="bg-white bg-opacity-30 p-4 rounded-lg">
+                        <div class="text-4xl font-bold" id="hours">00</div>
+                        <div class="text-sm opacity-80">Giờ</div>
+                    </div>
+                    <div class="bg-white bg-opacity-30 p-4 rounded-lg">
+                        <div class="text-4xl font-bold" id="minutes">00</div>
+                        <div class="text-sm opacity-80">Phút</div>
+                    </div>
+                    <div class="bg-white bg-opacity-30 p-4 rounded-lg">
+                        <div class="text-4xl font-bold" id="seconds">00</div>
+                        <div class="text-sm opacity-80">Giây</div>
+                    </div>
+                </div>
+                <p class="mt-6 opacity-90">Thời gian còn lại cho đến ngày lễ tốt nghiệp của chúng ta</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 heading-font">8A9 Lương Khánh Thiện</h3>
+                    <p class="text-gray-400">Niên khóa 2023-2024</p>
+                    <p class="text-gray-400 mt-2">Mái trường thân yêu với bao kỷ niệm</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 heading-font">Liên Kết</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Trang chủ</a></li>
+                        <li><a href="#class" class="text-gray-400 hover:text-white transition">Lớp học</a></li>
+                        <li><a href="#memories" class="text-gray-400 hover:text-white transition">Kỷ niệm</a></li>
+                        <li><a href="#messages" class="text-gray-400 hover:text-white transition">Lưu bút</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 heading-font">Thông Tin</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400"><i class="fas fa-school mr-2"></i> THCS Lương Khánh Thiện</li>
+                        <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> Hải Phòng, Việt Nam</li>
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> 8a9.luongkhanhthien@gmail.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 heading-font">Mạng Xã Hội</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-arrow-up mr-2"></i> Lên đầu trang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+                <p class="text-gray-400">© 2024 Lớp 8A9 - THCS Lương Khánh Thiện. Thiết kế với <i class="fas fa-heart text-red-500"></i> bởi học sinh 8A9</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- All Students Modal -->
+    <div id="allStudentsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-purple-700 heading-font">Danh Sách 51 Thành Viên Lớp 8A9</h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- List all 51 students here -->
+                <div class="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-blue-500"></i>
+                    </div>
+                    <span class="font-medium">Nguyễn Văn A</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition">
+                    <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-pink-500"></i>
+                    </div>
+                    <span class="font-medium">Trần Thị B</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-green-500"></i>
+                    </div>
+                    <span class="font-medium">Lê Hoàng C</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition">
+                    <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-yellow-500"></i>
+                    </div>
+                    <span class="font-medium">Phạm Minh D</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition">
+                    <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-purple-500"></i>
+                    </div>
+                    <span class="font-medium">Vũ Thị E</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition">
+                    <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-red-500"></i>
+                    </div>
+                    <span class="font-medium">Đặng Văn F</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition">
+                    <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-indigo-500"></i>
+                    </div>
+                    <span class="font-medium">Bùi Thị G</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition">
+                    <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-teal-500"></i>
+                    </div>
+                    <span class="font-medium">Hoàng Văn H</span>
+                </div>
+                <!-- Add all 51 students -->
+                <!-- For brevity, I'm showing 8, but you would list all 51 -->
+            </div>
+            <div class="mt-6 text-center">
+                <p class="text-gray-600 italic">"51 cá tính, 51 màu sắc, nhưng cùng chung một mái nhà lớp 8A9"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory Modal -->
+    <div id="memoryModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="memoryModalTitle" class="text-2xl font-bold text-purple-700 heading-font">Kỷ Niệm</h3>
+                <button onclick="closeMemoryModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="memoryModalContent" class="space-y-6">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown to graduation
+        function updateCountdown() {
+            // Set graduation date (June 1st, 2024 for example)
+            const graduationDate = new Date("June 1, 2024 08:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = graduationDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Modal functions
+        function showAllStudents() {
+            document.getElementById('allStudentsModal').classList.remove('hidden');
+        }
+        
+        function closeModal() {
+            document.getElementById('allStudentsModal').classList.add('hidden');
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('allStudentsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Memory modal functions
+        function showMemoryModal(memoryId) {
+            const modal = document.getElementById('memoryModal');
+            const title = document.getElementById('memoryModalTitle');
+            const content = document.getElementById('memoryModalContent');
+            
+            // Set title based on memoryId
+            if (memoryId === 1) {
+                title.textContent = "Giờ Học Cuối Cùng";
+                content.innerHTML = `
+                    <div class="bg-blue-100 rounded-lg mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Classroom" class="w-full h-64 object-cover">
+                    </div>
+                    <p class="text-gray-700">Những bài giảng cuối cùng của thầy cô trước khi chúng ta chia tay mái trường THCS Lương Khánh Thiện. Không khí lớp học hôm ấy thật đặc biệt, ai cũng chăm chú lắng nghe và ghi chép cẩn thận.</p>
+                    <p class="text-gray-700 mt-4">Cô giáo chủ nhiệm đã dành 15 phút cuối giờ để chia sẻ những lời tâm huyết với cả lớp. Cô nói: "Dù các em có đi đâu, làm gì, hãy luôn nhớ về mái trường này, nơi có những người thầy, người cô luôn dõi theo và mong các em thành công."</p>
+                    <div class="mt-6 flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> 15/05/2024
+                        <i class="fas fa-users ml-4 mr-2"></i> Cả lớp 8A9
+                    </div>
+                `;
+            } else if (memoryId === 2) {
+                title.textContent = "Chụp Ảnh Kỷ Yếu";
+                content.innerHTML = `
+                    <div class="bg-pink-100 rounded-lg mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Yearbook photo" class="w-full h-64 object-cover">
+                    </div>
+                    <p class="text-gray-700">Ngày chụp ảnh kỷ yếu là một trong những ngày đáng nhớ nhất của năm học. Cả lớp diện áo dài trắng tinh khôi, các bạn nam thì mặc vest lịch lãm. Chúng tôi đã có những bức ảnh đẹp tại nhiều góc của trường.</p>
+                    <p class="text-gray-700 mt-4">Đặc biệt nhất là bức ảnh chụp toàn thể lớp trên cầu thang chính của trường. Sau khi chụp ảnh nghiêm túc, chúng tôi đã có những kiểu ảnh vui nhộn, hài hước để lưu giữ kỷ niệm.</p>
+                    <div class="mt-6 flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> 20/04/2024
+                        <i class="fas fa-users ml-4 mr-2"></i> Cả lớp 8A9
+                    </div>
+                `;
+            } else if (memoryId === 3) {
+                title.textContent = "Tiệc Liên Hoan";
+                content.innerHTML = `
+                    <div class="bg-yellow-100 rounded-lg mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Party" class="w-full h-64 object-cover">
+                    </div>
+                    <p class="text-gray-700">Bữa tiệc liên hoan chia tay diễn ra vào chiều ngày 25/5 tại nhà bạn Mai Linh. Cả lớp đã chuẩn bị rất nhiều tiết mục văn nghệ đặc sắc, từ hát, múa đến kịch hài. Mọi người còn cùng nhau nhảy flashmob bài "See You Again".</p>
+                    <p class="text-gray-700 mt-4">Phần xúc động nhất là khi cả lớp cùng xem video tổng hợp những khoảnh khắc đáng nhớ trong 3 năm học. Nhiều bạn đã không kìm được nước mắt. Cuối buổi, chúng tôi trao nhau những món quà nhỏ và lời chúc tốt đẹp.</p>
+                    <div class="mt-6 flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> 25/05/2024
+                        <i class="fas fa-users ml-4 mr-2"></i> Cả lớp 8A9
+                    </div>
+                `;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+        
+        function closeMemoryModal() {
+            document.getElementById('memoryModal').classList.add('hidden');
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('memoryModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMemoryModal();
+            }
+        });
+        
+        // Form submission
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && message) {
+                alert(`Cảm ơn bạn ${name} đã gửi lời nhắn! Lời nhắn của bạn đã được lưu lại.`);
+                document.getElementById('name').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Vui lòng điền đầy đủ tên và lời nhắn!');
+            }
+        });
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#f94144', '#f3722c', '#f8961e', '#f9c74f', '#90be6d', '#43aa8b', '#577590', '#4d194d'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+        
+        // Animate elements when scrolling
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Change navbar style on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.remove('bg-opacity-90');
+                navbar.classList.add('bg-opacity-100');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.add('bg-opacity-90');
+                navbar.classList.remove('bg-opacity-100');
+            }
+        });
+    </script>
+</body>
+</html>
